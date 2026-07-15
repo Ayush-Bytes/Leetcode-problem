@@ -5,14 +5,17 @@ class Solution:
         max_area = 0
         
         while left < right:
-            width = right - left
-            current_height = min(height[left], height[right])
-            area = width * current_height
-            
-            max_area = max(max_area, area)
+           
             if height[left] < height[right]:
+                area = (right - left) * height[left]
+                if area > max_area:
+                    max_area = area
                 left += 1
+         
             else:
+                area = (right - left) * height[right]
+                if area > max_area:
+                    max_area = area
                 right -= 1
                 
         return max_area
