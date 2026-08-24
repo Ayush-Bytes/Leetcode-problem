@@ -17,8 +17,6 @@ class Solution:
                     if rev_suffix in word_to_idx and word_to_idx[rev_suffix] != i:
                         res.append([word_to_idx[rev_suffix], i])
 
-                # Case 2: If suffix is palindrome, look for reverse(prefix) after word
-                # len(suffix) != 0 handles the overlapping empty suffix edge case
                 if len(suffix) != 0 and suffix == suffix[::-1]:
                     rev_prefix = prefix[::-1]
                     if rev_prefix in word_to_idx and word_to_idx[rev_prefix] != i:
