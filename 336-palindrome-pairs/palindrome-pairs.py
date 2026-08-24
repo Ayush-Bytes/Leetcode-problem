@@ -12,7 +12,6 @@ class Solution:
                 prefix = word[:k]
                 suffix = word[k:]
 
-                # Case 1: If prefix is palindrome, look for reverse(suffix) before word
                 if prefix == prefix[::-1]:
                     rev_suffix = suffix[::-1]
                     if rev_suffix in word_to_idx and word_to_idx[rev_suffix] != i:
