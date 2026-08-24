@@ -15,8 +15,6 @@ class Solution:
                 if prefix == prefix[::-1]:
                     rev_suffix = suffix[::-1]
                     if rev_suffix in word_to_idx and word_to_idx[rev_suffix] != i:
-                        # Avoid duplicates when len(prefix) == 0 and len(rev_suffix) == len(word)
-                        # which overlaps with Case 2 when k == n
                         res.append([word_to_idx[rev_suffix], i])
 
                 # Case 2: If suffix is palindrome, look for reverse(prefix) after word
