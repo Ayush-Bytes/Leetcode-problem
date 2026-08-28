@@ -5,12 +5,10 @@ class Solution:
         n = len(s)
         cnt = Counter(s)
         
-        # 1. Check if valid palindromic permutation is possible
         odd_count = sum(1 for c in cnt if cnt[c] % 2 != 0)
         if odd_count > 1:
             return ""
         
-        # Store available character pairs for the first half
         half_cnt = {c: count // 2 for c, count in cnt.items() if count // 2 > 0}
         mid_char = next((c for c in cnt if cnt[c] % 2 != 0), None)
         
