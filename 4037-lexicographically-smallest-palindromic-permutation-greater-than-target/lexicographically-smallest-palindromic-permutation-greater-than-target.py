@@ -14,12 +14,8 @@ class Solution:
         
         k = n // 2
         
-        # Try to find the longest common prefix match with `target` up to index i-1,
-        # and at index i, put a character > target[i].
         
-        # We iterate from longest possible prefix (k) down to 0
         for i in range(k, -1, -1):
-            # Check if target[:i] can be formed by half_cnt
             cur_half_cnt = half_cnt.copy()
             possible = True
             
