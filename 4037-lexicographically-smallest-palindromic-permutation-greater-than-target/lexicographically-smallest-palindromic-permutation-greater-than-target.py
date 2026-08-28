@@ -30,43 +30,33 @@ class Solution:
             if not possible:
                 continue
             
-            # Case 1: Match first k characters exactly, and check middle character (if n is odd)
             if i == k:
                 if n % 2 != 0:
-                    # Target's mid char vs mid_char
                     if mid_char and mid_char > target[k]:
-                        # Form exact prefix target[:k] + mid_char + reversed(target[:k])
                         first_half = target[:k]
                         return first_half + mid_char + first_half[::-1]
-                # If even length or mid_char doesn't make it strictly greater, check mirror condition
                 first_half = target[:k]
                 full_palin = first_half + (mid_char if mid_char else "") + first_half[::-1]
                 if full_palin > target:
                     return full_palin
                 continue
 
-            # Case 2: At index i < k, pick a character > target[i]
             target_char = target[i]
             
-            # Try available characters strictly greater than target[i]
             sorted_chars = sorted(cur_half_cnt.keys())
             for ch in sorted_chars:
                 if ch > target_char and cur_half_cnt[ch] > 0:
-                    # Place 'ch' at index i
                     temp_cnt = cur_half_cnt.copy()
                     temp_cnt[ch] -= 1
                     
-                    # Construct remaining first half with smallest available characters
                     rem_half = []
                     for c in sorted(temp_cnt.keys()):
                         rem_half.extend([c] * temp_cnt[c])
                     
                     first_half = target[:i] + ch + "".join(rem_half)
                     
-                    # Construct middle character if n is odd
                     mid = mid_char if mid_char else ""
                     
-                    # Full palindrome
                     res = first_half + mid + first_half[::-1]
                     
                     if res > target:
