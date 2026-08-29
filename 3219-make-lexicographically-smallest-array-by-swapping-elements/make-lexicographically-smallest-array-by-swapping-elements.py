@@ -6,7 +6,6 @@ class Solution:
         
         ans = [0] * n
         
-        # Process in connected components/groups
         i = 0
         while i < n:
             j = i + 1
@@ -15,7 +14,6 @@ class Solution:
             
             indices = sorted([sorted_pairs[k][1] for k in range(i, j)])
             
-            # Place the sorted values into these sorted indices
             for k in range(i, j):
                 val = sorted_pairs[k][0]
                 target_idx = indices[k - i]
