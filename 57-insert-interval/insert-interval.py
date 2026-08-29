@@ -15,7 +15,6 @@ class Solution:
             
         result.append(newInterval)
         
-        # Step 3: Add all remaining intervals that start after newInterval ends
         while i < n:
             result.append(intervals[i])
             i += 1
