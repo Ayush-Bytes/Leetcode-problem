@@ -10,11 +10,9 @@ class Solution:
         i = 0
         while i < n:
             j = i + 1
-            # Find the contiguous range in sorted_pairs belonging to the same group
             while j < n and sorted_pairs[j][0] - sorted_pairs[j - 1][0] <= limit:
                 j += 1
             
-            # Extract original indices for this component and sort them
             indices = sorted([sorted_pairs[k][1] for k in range(i, j)])
             
             # Place the sorted values into these sorted indices
