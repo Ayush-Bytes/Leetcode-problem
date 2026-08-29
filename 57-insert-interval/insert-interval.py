@@ -4,7 +4,6 @@ class Solution:
         i = 0
         n = len(intervals)
         
-        # Step 1: Add all intervals that end before newInterval starts
         while i < n and intervals[i][1] < newInterval[0]:
             result.append(intervals[i])
             i += 1
