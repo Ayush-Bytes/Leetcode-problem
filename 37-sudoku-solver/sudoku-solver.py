@@ -8,7 +8,6 @@ class Solution:
         boxes = [0] * 9
         empty_cells = []
 
-        # Step 1: Initialize bitmasks and collect empty cells
         for r in range(9):
             for c in range(9):
                 if board[r][c] == '.':
@@ -21,7 +20,6 @@ class Solution:
                     cols[c] |= mask
                     boxes[b] |= mask
 
-        # Step 2: Backtrack over empty cells only
         def backtrack(index: int) -> bool:
             if index == len(empty_cells):
                 return True
