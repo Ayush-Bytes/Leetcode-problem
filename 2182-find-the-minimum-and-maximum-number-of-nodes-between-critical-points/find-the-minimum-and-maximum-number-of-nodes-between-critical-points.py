@@ -11,14 +11,13 @@ class Solution:
         
         prev = head
         curr = head.next
-        index = 1  # 0-indexed offset, head.next is at index 1
+        index = 1  
         
         first_cp = -1
         last_cp = -1
         min_dist = float('inf')
         
         while curr and curr.next:
-            # Check if current node is a critical point (local maxima or minima)
             is_maxima = prev.val < curr.val and curr.val > curr.next.val
             is_minima = prev.val > curr.val and curr.val < curr.next.val
             
@@ -34,7 +33,6 @@ class Solution:
             curr = curr.next
             index += 1
             
-        # If less than 2 critical points were found
         if first_cp == -1 or first_cp == last_cp:
             return [-1, -1]
             
