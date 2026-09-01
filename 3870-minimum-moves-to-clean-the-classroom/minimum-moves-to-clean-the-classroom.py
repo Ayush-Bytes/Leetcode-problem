@@ -51,15 +51,12 @@ class Solution:
                     cell = classroom[nr][nc]
                     nmask = mask
                     
-                    # Reset energy if standing on 'R'
                     if cell == 'R':
                         ne = energy
-                    # Collect litter if standing on 'L'
                     elif cell == 'L':
                         if (nr, nc) in litter_map:
                             nmask |= (1 << litter_map[(nr, nc)])
                     
-                    # State pruning: Only visit if we have strictly more energy than before
                     state = (nr, nc, nmask)
                     if ne > best_energy.get(state, -1):
                         best_energy[state] = ne
