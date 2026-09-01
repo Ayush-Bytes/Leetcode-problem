@@ -8,7 +8,6 @@ class Solution:
         start_r = start_c = -1
         litter_coords = []
         
-        # Grid parse karke Start aur Litter locations nikalna
         for r in range(m):
             for c in range(n):
                 ch = classroom[r][c]
@@ -20,10 +19,8 @@ class Solution:
         num_litters = len(litter_coords)
         full_mask = (1 << num_litters) - 1
         
-        # Map litter coordinates to bit index
         litter_map = {pos: i for i, pos in enumerate(litter_coords)}
         
-        # BFS Queue: (r, c, mask, e, steps)
         queue = deque([(start_r, start_c, 0, energy, 0)])
         
         # best_energy[r][c][mask] -> maximum energy remaining at (r, c, mask)
