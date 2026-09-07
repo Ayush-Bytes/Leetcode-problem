@@ -7,7 +7,6 @@ class Solution:
 
     for char in s:
       idx = ord(char) - ord('a')
-      # New subsequences created by appending current character = (sum of all previous distinct subsequences + 1)
       new_count = (sum(last_added) + 1) % MOD
       last_added[idx] = new_count
 
