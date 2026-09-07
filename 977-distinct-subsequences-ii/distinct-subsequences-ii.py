@@ -2,7 +2,6 @@ class Solution:
 
   def distinctSubseqII(self, s: str) -> int:
     MOD = 10**9 + 7
-    # last_added[c] stores the count of distinct subsequences ending with character 'c'
     last_added = [0] * 26
 
     for char in s:
