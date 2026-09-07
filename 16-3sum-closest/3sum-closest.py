@@ -18,7 +18,6 @@ class Solution:
                 elif current_sum > target:
                     right -= 1
                 else:
-                    # Exact match found
                     return target
 
         return closest_sum
