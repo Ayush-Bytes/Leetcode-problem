@@ -10,7 +10,6 @@ class Solution:
             while left < right:
                 current_sum = nums[i] + nums[left] + nums[right]
 
-                # Update closest_sum if current_sum is closer to target
                 if abs(target - current_sum) < abs(target - closest_sum):
                     closest_sum = current_sum
 
