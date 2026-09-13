@@ -12,5 +12,4 @@ class Solution:
                 vector = (r2 - r1, c2 - c1)
                 translation_counts[vector] += 1
                 
-        # Return the maximum overlap found for any translation vector
         return max(translation_counts.values(), default=0)
