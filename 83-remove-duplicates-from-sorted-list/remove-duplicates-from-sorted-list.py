@@ -10,10 +10,8 @@ class Solution:
         
         while curr and curr.next:
             if curr.val == curr.next.val:
-                # Duplicate mila, to next node ko skip (delete) perform karo
                 curr.next = curr.next.next
             else:
-                # Unique value milli, aage bado
                 curr = curr.next
                 
         return head
