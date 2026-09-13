@@ -7,7 +7,6 @@
 
 class Solution:
     def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
-        # Base case: Agar tree empty hai
         if not root:
             return False
         
