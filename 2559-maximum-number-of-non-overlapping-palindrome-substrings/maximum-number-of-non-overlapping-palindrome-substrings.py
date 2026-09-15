@@ -16,11 +16,9 @@ class Solution:
         for i in range(1, n + 1):
             dp[i] = dp[i - 1]
             
-            # Option 2: Check if s[j...i-1] forms a valid palindrome of length >= k
             for j in range(i - k, -1, -1):
                 if is_pal[j][i - 1]:
                     dp[i] = max(dp[i], dp[j] + 1)
-                    # Shortcut: length k or k+1 minimum valid length pick karna greedy standard hai
                     break
                     
         return dp[n]
