@@ -11,11 +11,9 @@ class Solution:
                     if j - i == 1 or is_pal[i + 1][j - 1]:
                         is_pal[i][j] = True
         
-        # dp[i] = maximum non-overlapping palindromes in s[0...i-1]
         dp = [0] * (n + 1)
         
         for i in range(1, n + 1):
-            # Option 1: Don't include s[i-1] in any new palindrome
             dp[i] = dp[i - 1]
             
             # Option 2: Check if s[j...i-1] forms a valid palindrome of length >= k
