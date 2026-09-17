@@ -25,7 +25,6 @@ class Solution:
         sum_to_index = {0: n}
         min_len_right = float('inf')
         
-        # Traverse from right to left to find the second non-overlapping subarray
         for i in range(n - 1, -1, -1):
             prefix_sum += arr[i]
             need = prefix_sum - target
@@ -37,7 +36,6 @@ class Solution:
             
             sum_to_index[prefix_sum] = i
             
-            # If there is a valid subarray to the left that doesn't overlap
             if i > 0 and min_len_left[i - 1] != float('inf') and min_len_right != float('inf'):
                 ans = min(ans, min_len_left[i - 1] + min_len_right)
                 
