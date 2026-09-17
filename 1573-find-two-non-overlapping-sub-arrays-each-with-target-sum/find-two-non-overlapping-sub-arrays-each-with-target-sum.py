@@ -1,7 +1,6 @@
 class Solution:
     def minSumOfLengths(self, arr: list[int], target: int) -> int:
         n = len(arr)
-        # min_len_left[i] stores the minimum length of a valid subarray ending at or before index i
         min_len_left = [float('inf')] * n
         
         prefix_sum = 0
