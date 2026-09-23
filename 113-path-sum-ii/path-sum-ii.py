@@ -6,12 +6,10 @@ class Solution:
             if not node:
                 return
             
-            # Include the current node in the path
             current_path.append(node.val)
             
-            # Check if it's a leaf node and the path sum matches targetSum
             if not node.left and not node.right and remaining_sum == node.val:
-                result.append(list(current_path)) # Append a copy of the path
+                result.append(list(current_path)) 
             else:
                 # Recurse on left and right children
                 dfs(node.left, current_path, remaining_sum - node.val)
