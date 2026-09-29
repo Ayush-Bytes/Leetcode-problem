@@ -6,7 +6,7 @@ class Solution:
         if (m + n - 1) % 2 != 0 or grid[0][0] == ')' or grid[m - 1][n - 1] == '(':
             return False
             
-        # dp[r][c] will store the set of all possible balance values when reaching cell (r, c)
+        
         dp = [[set() for _ in range(n)] for _ in range(m)]
         
         start_val = 1 if grid[0][0] == '(' else -1
