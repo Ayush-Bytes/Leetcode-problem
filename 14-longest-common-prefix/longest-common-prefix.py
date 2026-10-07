@@ -3,7 +3,6 @@ class Solution:
         if not strs:
             return ""
         
-        # Sort the array to easily compare the first and last strings lexicographically
         strs.sort()
         first = strs[0]
         last = strs[-1]
