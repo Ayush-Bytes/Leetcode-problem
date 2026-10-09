@@ -10,16 +10,12 @@ class Solution:
                 left += 1
                 i += 1
             else:
-                # We found a ')'
-                # Check if the next character is also ')'
                 if i + 1 < n and s[i + 1] == ')':
                     i += 2
                 else:
-                    # Only one ')' found, need to insert another one
                     res += 1
                     i += 1
                 
-                # Try to match with an available opening parenthesis
                 if left > 0:
                     left -= 1
                 else:
