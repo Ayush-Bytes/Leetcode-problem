@@ -19,9 +19,7 @@ class Solution:
                 if left > 0:
                     left -= 1
                 else:
-                    # No opening parenthesis available, need to insert '('
                     res += 1
                     
-        # Any remaining unmatched opening parenthesis needs two ')' each
         res += left * 2
         return res
