@@ -2,16 +2,12 @@ class Solution:
     def countDaysTogether(
         self, arriveAlice: str, leaveAlice: str, arriveBob: str, leaveBob: str
     ) -> int:
-      # Days in each month for a non-leap year
       days_in_months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-      # Helper function to convert "MM-DD" to the day number of the year
       def convert_to_day_number(date_str: str) -> int:
         month, day = map(int, date_str.split("-"))
-        # Sum days of preceding months + current day
         return sum(days_in_months[: month - 1]) + day
 
-      # Convert all four dates into day numbers of the year
       alice_arrive = convert_to_day_number(arriveAlice)
       alice_leave = convert_to_day_number(leaveAlice)
       bob_arrive = convert_to_day_number(arriveBob)
