@@ -28,12 +28,11 @@ class Solution:
             if grid[r][cols - 1] == 0:
                 dfs(r, cols - 1)
                 
-        # Step 3: Count the remaining closed islands
         closed_islands_count = 0
         for r in range(rows):
             for c in range(cols):
                 if grid[r][c] == 0:
                     closed_islands_count += 1
-                    dfs(r, c) # Sink this entire closed island
+                    dfs(r, c) 
                     
         return closed_islands_count
