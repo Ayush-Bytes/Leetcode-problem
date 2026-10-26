@@ -35,7 +35,6 @@ class Solution:
                 visited[nr][nc] = True
                 queue.append((nr, nc))
 
-          # Check if the total value of the island is divisible by k
           if island_sum % k == 0:
             count += 1
 
