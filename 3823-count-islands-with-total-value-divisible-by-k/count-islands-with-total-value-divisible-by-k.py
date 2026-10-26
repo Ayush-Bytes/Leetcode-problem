@@ -16,7 +16,6 @@ class Solution:
     for r in range(m):
       for c in range(n):
         if grid[r][c] > 0 and not visited[r][c]:
-          # Start BFS for this island
           island_sum = 0
           queue = deque([(r, c)])
           visited[r][c] = True
