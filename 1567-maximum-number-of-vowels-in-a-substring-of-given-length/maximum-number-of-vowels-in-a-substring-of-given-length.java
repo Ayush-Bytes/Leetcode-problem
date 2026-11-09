@@ -3,7 +3,6 @@ class Solution {
         int maxVowels = 0;
         int currentVowels = 0;
         
-        // Count vowels in the first window of size k
         for (int i = 0; i < k; i++) {
             if (isVowel(s.charAt(i))) {
                 currentVowels++;
@@ -12,7 +11,6 @@ class Solution {
         
         maxVowels = currentVowels;
         
-        // Slide the window across the rest of the string
         for (int i = k; i < s.length(); i++) {
             if (isVowel(s.charAt(i))) {
                 currentVowels++;
@@ -20,7 +18,6 @@ class Solution {
             if (isVowel(s.charAt(i - k))) {
                 currentVowels--;
             }
-            // Update the maximum number of vowels found
             maxVowels = Math.max(maxVowels, currentVowels);
         }
         
