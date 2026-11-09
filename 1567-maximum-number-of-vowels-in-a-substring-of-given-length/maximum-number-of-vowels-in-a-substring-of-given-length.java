@@ -14,11 +14,9 @@ class Solution {
         
         // Slide the window across the rest of the string
         for (int i = k; i < s.length(); i++) {
-            // Add the new character entering the window on the right
             if (isVowel(s.charAt(i))) {
                 currentVowels++;
             }
-            // Remove the character leaving the window on the left
             if (isVowel(s.charAt(i - k))) {
                 currentVowels--;
             }
